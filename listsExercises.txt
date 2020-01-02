@@ -1,0 +1,46 @@
+l = [1,3,5,11,13,21,43,56]
+l2 = []
+
+for n in l:
+    n= n**2
+    print(n)
+    l2.append(n)    # nl.append(n ** 2)
+print (l2)
+
+
+#l2= [element**2 for el in orig_list]
+
+names = ['ania', 'gosia','pawel']
+
+caputalized_names= [n.capitalize()  for n in names]
+print(caputalized_names)
+
+# for name in names:
+#    caputalized_names.append(name.capitalize())     # tak by było normalnie to 2 sposób
+
+degrees=[45, 90, 180, 360]
+radians= []
+
+for d in degrees:
+    rad=d*3.14/180
+    radians.append(rad)
+
+radians2= [d*3.14/180 for d in degrees]
+print (radians2)    #to sie moze przydac do wyciagniecia firstnamow z listy
+
+# firstnames = [d ['firstname] for d in dict_list] tak byśmy to zrobili   co robimy dla każdedego el gdzie
+
+l=[10.3, 12.5, 13.4, 18.1, 20.04, 16.3,9.7]
+farenheits= []
+
+#for c in l:
+     #   tf=c*1.8+32   // do nowej listy dodajemy jej nowy utworzony element
+      #  farenheits.append(tf)
+      # a powinno być
+
+farenheits= round([c*1.8+32 for c in l],2)
+print (farenheits)
+
+
+
+
