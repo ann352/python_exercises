@@ -1,0 +1,43 @@
+class Car:
+    def __init__(self, model, color, tank_volume, average_mpg):
+        self.model = model
+        self._color = color
+        self.tank_volume = tank_volume
+        self.avg_mpg = average_mpg
+        self.gas = 0
+        self.total_distance = 0
+
+    @property
+    def color(self):
+        return self._color
+
+    @color.setter
+    def color(self, value):
+        self._color = value
+
+    @property
+    def distance_remaining(self):
+        return self.gas / self.avg_mpg * 100
+
+    def fill_gas(self, gas_liters):
+        self.gas = self.gas + gas_liters
+        print(f'Filling up the tank with {gas_liters} liters')
+
+    def drive(self, distance_km):
+        gas_required = distance_km / 100 * self.avg_mpg
+        if gas_required > self.gas:
+            print("There's not enough gas in tank!")
+        else:
+            print('Driving!')
+            self.total_distance += distance_km
+            self.gas -= gas_required
+
+
+my_car = Car('Hyundai', 'Grey', 50, 10)
+my_car.drive(200)
+my_car.fill_gas(22.5)
+my_car.drive(200)
+print(my_car.distance_remaining)
+my_car.drive(50)
+
+
