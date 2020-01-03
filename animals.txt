@@ -1,0 +1,88 @@
+class Cat:    # musimy pamiętać o braku odstepu tutaj - def(), wcięciach, ":" 
+    def __init__(self,cat_name,cat_age):  # to znaczy, że to jest konstruktor
+        self.name=cat_name  # u siebie (self) w klasie trzymaj w zmiennej name to co jest podane w parametrze cat_name
+        self.age=cat_age  #przypisanie parametrów dompól klasy
+
+    def meow(self):      # dokładamy metodę i wywołujemy na wybranej instancji(obiekcie)
+        print("Meow")
+
+    def print_age(self):
+        print(f'My age is {self.age}')   # tu tworzymy metodę, która skorzysta z danego pola klasy, ta metoda korzysta z self.age
+
+    def set_name(self, new_name):
+        self.name=new_name
+
+    def get_name(self):
+        return self.name
+
+
+my_cat=Cat('Mruczek',13)# zmienna= nazwa klasy (obowiązkowy parametr?)
+print(my_cat.name, my_cat.age)  # 1 kot
+
+
+
+my_cat2=Cat('Miauczek',7)  # zmienna= nazwa klasy (obowiązkowe pola klasy)
+print(my_cat2.name, my_cat2.age)  
+
+my_cat.meow()
+my_cat2.meow()
+
+my_cat.print_age()
+my_cat2.print_age()    # ta metoda nie przyjmuje zewnetrznych parametrow
+
+
+
+
+
+
+my_cat=Cat('Mruczek',13) 
+print(my_cat.name, my_cat.age)  
+
+
+
+my_cat2=Cat('Miauczek',7)  
+print(my_cat2.name, my_cat2.age)    
+my_cat.meow()
+my_cat2.meow()
+
+my_cat.print_age()
+my_cat2.print_age()    # ta metoda nie przyjmuje zewnetrznych parametrlow
+
+
+print(my_cat.get_name())
+my_cat.set_name("Puszek")
+print(my_cat.get_name())
+
+
+
+
+class Dog:
+    def __init__(self,dog_name,dog_weight,dog_tail_length):
+        self.name=dog_name  # u siebie (self) w klasie trzymaj w zmiennej name to co jest podane w parametrze dog_name
+        self.weight=dog_weight
+        self.tail_length=dog_tail_length   #przypisanie parametrów do pól klasy
+
+    def bark(self):      # tworzymy metodę i wywołujemy na wybranej instancji(obiekcie)
+        print("Weow")
+
+    def set_weight(self, new_weight):
+        self.weight = new_weight
+
+    def get_weight(self):
+        return self.dog_weight
+
+
+
+
+dog1=Dog("Azor",12,15)
+print(dog1.name,dog1.weight,dog1.tail_length)
+dog1.bark()
+dog1.set_weight(13)
+dog1.get_weight()
+
+dog2=Dog("Luna",7,10)
+print(dog2.name,dog2.weight,dog2.tail_length)
+dog2.bark()
+dog2.set_weight(14)
+print(dog2.get_weight())
+
